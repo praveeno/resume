@@ -2,5 +2,7 @@
   "name": "js-h1ynh8",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "mustache": "^4.0.0"
+  }
 }

@@ -1,6 +1,8 @@
-// Import stylesheets
-import './style.css';
-
-// Write Javascript code!
-// const appDiv = document.getElementById('app');
-// appDiv.innerHTML = `<h1>JS Starter</h1>`;
+function renderResume() {
+    Promise.all([fetch('template.mustache'), fetch('resume.json')])
+      .then(([tmplResp, jsonResp]) => [tmplResp.text(), jsonResp.json()])
+      .then(([template, resumeJson]) => {
+        var rendered = Mustache.render(template, resumeJson);
+        document.getElementById('target').innerHTML = rendered;    
+      });
+}
